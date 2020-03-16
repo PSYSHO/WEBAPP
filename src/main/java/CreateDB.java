@@ -1,8 +1,8 @@
+import app.connection.Util;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import static app.connection.Connection.getConnection;
 
 public class CreateDB {
     public static void main(String[] args) throws SQLException {
@@ -70,7 +70,8 @@ public class CreateDB {
                 "\n" +
                 "\n";
         PreparedStatement ps = null;
-        Connection connection = getConnection();
+        Util util = new Util();
+        Connection connection = util.getConnection();
         ps = connection.prepareStatement(Sql);
         ps.executeUpdate();
     }

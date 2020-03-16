@@ -4,6 +4,15 @@ public class Route {
     private int Id;
     private int StartPoint;
     private int EndPoint;
+    private int Time;
+
+    public void setTime(int time) {
+        Time = time;
+    }
+
+    public int getTime() {
+        return Time;
+    }
 
     public void setId(int id) {
         Id = id;

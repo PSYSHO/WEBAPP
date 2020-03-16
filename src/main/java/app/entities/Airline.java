@@ -1,16 +1,15 @@
 package app.entities;
 
 
+import javax.persistence.PrimaryKeyJoinColumn;
 import java.io.Serializable;
 import java.sql.Date;
 
 public class Airline implements Serializable {
     private int Id;
-    private String Route;
-    private String TypeAirlines;
-    private int Time;
+    private Route Route;
+    private Plane plane;
     private java.sql.Date data;
-    //todo сделать так чтоб в обьекте были не id
     public Airline(){
     }
 
@@ -22,29 +21,22 @@ public class Airline implements Serializable {
         return Id;
     }
 
-    public void setRoute(String route) {
+    public void setRoute(Route route) {
         Route = route;
     }
 
-    public String getRoute() {
+    public Route getRoute() {
         return Route;
     }
 
-    public void setTypeAirlines(String typeAirlines) {
-        TypeAirlines = typeAirlines;
+    public void setPlane(Plane plane) {
+        this.plane = plane;
     }
 
-    public String getTypeAirlines() {
-        return TypeAirlines;
+    public Plane getPlane() {
+        return plane;
     }
 
-    public int getTime() {
-        return Time;
-    }
-
-    public void setTime(int time) {
-        Time = time;
-    }
 
     public void setData(Date data) {
         this.data = data;

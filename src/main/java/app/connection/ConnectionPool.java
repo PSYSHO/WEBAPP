@@ -5,7 +5,7 @@ import java.util.Properties;
 import org.apache.commons.dbcp.BasicDataSource;
 
 public class ConnectionPool {
-    private ConnectionPool(){}
+    /*private ConnectionPool(){}
     private static BasicDataSource ods;
     static {
         ods = new BasicDataSource();
@@ -23,5 +23,5 @@ public class ConnectionPool {
     }
     public static java.sql.Connection getConnection() throws SQLException {
         return ods.getConnection();
-    }
+    }*/
 }

@@ -1,5 +1,6 @@
 package app.service;
 
+import app.connection.Util;
 import app.dao.DAO;
 import app.entities.AirlinesType;
 
@@ -10,12 +11,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static app.connection.Connection.getConnection;
 
-public class TypeAirlinesService implements DAO<AirlinesType> {
-    Connection connection = getConnection();
+public class AirlinesTypeService implements DAO<AirlinesType> {
+    Util util = new Util();
+    Connection connection = util.getConnection();
 
-    public TypeAirlinesService() throws SQLException {
+    public AirlinesTypeService() throws SQLException {
     }
 
     public void add(AirlinesType o) throws SQLException {

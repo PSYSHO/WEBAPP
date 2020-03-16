@@ -1,5 +1,6 @@
 package app.service;
 
+import app.connection.Util;
 import app.dao.DAO;
 import app.entities.Plane;
 
@@ -11,7 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlaneService implements DAO<Plane> {
-    Connection connection = app.connection.Connection.getConnection();
+    Util util = new Util();
+    Connection connection = util.getConnection();
     PreparedStatement preparedStatement = null;
 
     public PlaneService() throws SQLException {

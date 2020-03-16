@@ -1,5 +1,6 @@
 package app.service;
 
+import app.connection.Util;
 import app.dao.DAO;
 import app.entities.Route;
 
@@ -10,10 +11,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static app.connection.Connection.getConnection;
+
 
 public class RouteService  implements DAO<Route> {
-    Connection connection = getConnection();
+    Util util = new Util();
+    Connection connection = util.getConnection();
     PreparedStatement preparedStatement = null;
 
     public RouteService() throws SQLException {
@@ -34,11 +36,12 @@ public class RouteService  implements DAO<Route> {
     }
 
     public void add(Route route) throws SQLException {
-        String sql = "Insert INTO route(startpoint, endpoint)VALUES(?,?)";
+        String sql = "Insert INTO route(startpoint, endpoint,Time)VALUES(?,?,?)";
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, route.getStartPoint());
             preparedStatement.setInt(2, route.getEndPoint());
+            preparedStatement.setInt(3,route.getTime());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

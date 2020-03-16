@@ -1,5 +1,6 @@
 package app.service;
 
+import app.connection.Util;
 import app.dao.DAO;
 import app.entities.City;
 
@@ -10,11 +11,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static app.connection.Connection.getConnection;
 
 public class CityService implements DAO<City> {
     PreparedStatement preparedStatement = null;
-    Connection connection  = getConnection();
+    Util util = new Util();
+    Connection connection = util.getConnection();
 
     public CityService() throws SQLException {
     }

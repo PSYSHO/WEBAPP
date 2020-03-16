@@ -2,6 +2,7 @@ package app.entities;
 
 public class City {
     private int Id;
+
     private String NameCity;
 
     public City() {
